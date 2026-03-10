@@ -6,7 +6,7 @@
 
 AISHA is an open-source blog and resource hub for solution architects, startup builders, and tech leads who want practical frameworks, lean documentation patterns, and AI integration guides — without the enterprise bloat.
 
-🌐 **Live site:** [yourusername.github.io/aisha](https://yourusername.github.io/aisha)
+🌐 **Live site:** [abuthoppan.github.io/aisha](https://abuthoppan.github.io/aisha)
 
 ---
 
