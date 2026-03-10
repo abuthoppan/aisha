@@ -1,0 +1,19 @@
+- icon: "🧠"
+  title: "Heuristic Thinking"
+  description: "Rules of thumb and decision frameworks that help you make good architectural choices fast — even with incomplete information."
+
+- icon: "📐"
+  title: "Solution Design"
+  description: "From diagrams to data models — how to translate architecture decisions into specifications developers can actually build from."
+
+- icon: "⚡"
+  title: "Lean Process"
+  description: "Just enough documentation, just enough governance. Processes that protect quality without killing velocity."
+
+- icon: "🤖"
+  title: "AI Integration"
+  description: "Practical patterns for embedding AI into products and workflows — not hype, but working architectural approaches."
+
+- icon: "🚀"
+  title: "Automation"
+  description: "How to identify, design and implement automation that gives small teams disproportionate output and leverage."

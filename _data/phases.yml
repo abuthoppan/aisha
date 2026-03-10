@@ -1,0 +1,19 @@
+- name: "Discover"
+  tag: "Why?"
+  description: "Understand the problem before touching a solution. Define the problem, stakeholders, and constraints."
+
+- name: "Design"
+  tag: "What?"
+  description: "Define what to build at the right level of detail. Architecture diagrams, decision logs, data maps."
+
+- name: "Develop"
+  tag: "Build"
+  description: "Build iteratively with just enough governance. Backlog, sprints, definition of done."
+
+- name: "Implement"
+  tag: "Launch"
+  description: "Deploy and transition to real-world use. Go-live checklist, cutover plan, user guides."
+
+- name: "Operate"
+  tag: "Run"
+  description: "Keep it running and improving. Operating model, support playbook, retrospective log."

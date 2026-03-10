@@ -1,0 +1,158 @@
+---
+layout: home
+title: Home
+permalink: /
+---
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-left">
+    <p class="hero-eyebrow">AI for Software Heuristics and Automation</p>
+    <h1 class="hero-title">
+      Think<br>
+      <span class="italic">Leaner.</span><br>
+      Build <span class="accent">Smarter.</span>
+    </h1>
+    <p class="hero-sub">
+      Architecture frameworks, lean documentation, and practical tutorials for solution architects and startup builders who want to ship with clarity and speed.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ '/framework/' | relative_url }}" class="btn-primary">Explore the Framework</a>
+      <a href="{{ '/blog/' | relative_url }}" class="btn-ghost">Read Tutorials →</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="diagram-wrap">
+      <div class="diagram-outer">
+        <div class="orbit-dot orbit-dot-1"></div>
+        <div class="orbit-dot orbit-dot-2"></div>
+        <div class="orbit-dot orbit-dot-3"></div>
+        <div class="orbit-dot orbit-dot-4"></div>
+        <div class="orbit-dot orbit-dot-5"></div>
+        <div class="diagram-middle">
+          <div class="diagram-inner">
+            <span class="diagram-inner-text">AI<span>SHA</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-label" style="top:8%;left:52%;color:var(--accent)">Discover</div>
+    <div class="phase-label" style="top:25%;right:2%;color:var(--accent2)">Design</div>
+    <div class="phase-label" style="bottom:25%;right:4%;color:var(--accent)">Develop</div>
+    <div class="phase-label" style="bottom:10%;left:50%;color:var(--accent2)">Implement</div>
+    <div class="phase-label" style="top:45%;left:26%;color:var(--muted)">Operate</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    {% assign keywords = "Solution Architecture,Lean Documentation,AI-Assisted Design,Startup Frameworks,System Design,Automation Patterns,Tech Strategy,Heuristic Thinking" | split: "," %}
+    {% for kw in keywords %}<span class="marquee-item">{{ kw }}</span>{% endfor %}
+    {% for kw in keywords %}<span class="marquee-item">{{ kw }}</span>{% endfor %}
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-strip reveal">
+  <div class="about-left">
+    <p class="section-label">What is AISHA</p>
+    <h2>Where strategy<br>meets <em>simplicity</em></h2>
+  </div>
+  <div class="about-right">
+    <div class="about-block">
+      <strong>For Architects</strong>
+      <p>Frameworks, decision tools, and documentation templates that help you communicate complex solutions clearly — to both tech teams and business stakeholders.</p>
+    </div>
+    <div class="about-block">
+      <strong>For Builders</strong>
+      <p>Practical tutorials on designing systems, choosing tech stacks, and automating workflows — without the enterprise overhead that slows startups down.</p>
+    </div>
+    <div class="about-block">
+      <strong>For Founders</strong>
+      <p>Plain-language breakdowns of architectural decisions so you can have informed conversations with your tech team and make better investment choices.</p>
+    </div>
+    <div class="about-block">
+      <strong>Powered by AI</strong>
+      <p>Every framework and tutorial explores how AI changes the way we design, document, and build — giving lean teams the leverage of enterprise-scale thinking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars reveal">
+  <div class="pillars-header">
+    <div>
+      <p class="section-label">Core Focus Areas</p>
+      <h2>Five pillars.<br>One framework.</h2>
+    </div>
+    <p>Everything on AISHA connects back to these five disciplines of modern solution architecture.</p>
+  </div>
+  <div class="pillars-grid">
+    {% assign pillars = site.data.pillars %}
+    {% for pillar in pillars %}
+    <div class="pillar">
+      <p class="pillar-num">0{{ forloop.index }}</p>
+      <div class="pillar-icon">{{ pillar.icon }}</div>
+      <h3 class="pillar-title">{{ pillar.title }}</h3>
+      <p class="pillar-desc">{{ pillar.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="framework reveal">
+  <div class="framework-left">
+    <p class="section-label">The LSF Framework</p>
+    <h2>Lean Solution<br><span>Framework</span></h2>
+    <p>A five-phase process for planning, building, launching and operating digital products — designed specifically for startups and lean teams.</p>
+    <a href="{{ '/framework/' | relative_url }}" class="btn-primary">Explore the Framework</a>
+  </div>
+  <div class="framework-right">
+    {% assign phases = site.data.phases %}
+    {% for phase in phases %}
+    <div class="phase-row">
+      <span class="phase-num">0{{ forloop.index }}</span>
+      <span class="phase-name">{{ phase.name }}</span>
+      <span class="phase-tag">{{ phase.tag }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- LATEST POSTS -->
+<section class="blog-section reveal">
+  <div class="blog-header">
+    <div>
+      <p class="section-label">Latest</p>
+      <h2>From the blog</h2>
+    </div>
+    <a href="{{ '/blog/' | relative_url }}">View all posts →</a>
+  </div>
+  <div class="posts-grid">
+    {% for post in site.posts limit:3 %}
+      {% include post-card.html post=post %}
+    {% else %}
+      <article class="post-card">
+        <p class="post-tag">Architecture</p>
+        <h3 class="post-title"><a href="#">The 15 Documents Every Solution Architect Should Know</a></h3>
+        <p class="post-excerpt">A practical breakdown of essential documentation across discovery, design, implementation and operations.</p>
+        <div class="post-meta"><span>Coming soon</span></div>
+      </article>
+      <article class="post-card">
+        <p class="post-tag">Framework</p>
+        <h3 class="post-title"><a href="#">The Lean Solution Framework: Build Without Bloat</a></h3>
+        <p class="post-excerpt">How to plan, build, launch and operate a product using just enough process — without the overhead that kills velocity.</p>
+        <div class="post-meta"><span>Coming soon</span></div>
+      </article>
+      <article class="post-card">
+        <p class="post-tag">Fundamentals</p>
+        <h3 class="post-title"><a href="#">Solution Architecture vs Solution Design</a></h3>
+        <p class="post-excerpt">Two roles, two levels of abstraction — and why understanding the distinction makes you a better architect.</p>
+        <div class="post-meta"><span>Coming soon</span></div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

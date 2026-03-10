@@ -1,0 +1,26 @@
+{% include newsletter.html %}
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">AI<span>SHA</span></div>
+      <p class="footer-tagline">AI for Software Heuristics and Automation</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/framework/' | relative_url }}">Framework</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Tutorials</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      </ul>
+    </nav>
+
+    <p class="footer-copy">
+      © {{ 'now' | date: "%Y" }} AISHA ·
+      <a href="{{ site.github_repo | default: 'https://github.com' }}" target="_blank" rel="noopener">
+        Open Source on GitHub ↗
+      </a>
+    </p>
+  </div>
+</footer>

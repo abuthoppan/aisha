@@ -1,0 +1,22 @@
+<article class="post-card">
+  {% if include.post.categories %}
+    <p class="post-tag">{{ include.post.categories | first }}</p>
+  {% else %}
+    <p class="post-tag">Article</p>
+  {% endif %}
+
+  <h3 class="post-title">
+    <a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+  </h3>
+
+  <p class="post-excerpt">
+    {{ include.post.excerpt | strip_html | truncatewords: 22 }}
+  </p>
+
+  <div class="post-meta">
+    <span>{{ include.post.date | date: "%b %-d, %Y" }}</span>
+    {% if include.post.read_time %}
+      <span>{{ include.post.read_time }} min read</span>
+    {% endif %}
+  </div>
+</article>

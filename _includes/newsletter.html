@@ -1,0 +1,51 @@
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-left">
+    <h2>Think leaner.<br><em>Build smarter.</em></h2>
+    <p>One practical architecture insight, framework, or tutorial — delivered to your inbox every week. No fluff.</p>
+  </div>
+
+  <div class="newsletter-right">
+    <!-- Mailchimp Form -->
+    <!-- Replace action URL in _config.yml → mailchimp.action_url -->
+    <form class="newsletter-form"
+          action="{{ site.mailchimp.action_url }}"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          target="_blank"
+          novalidate>
+
+      <input type="text"
+             name="FNAME"
+             id="mc-fname"
+             placeholder="Your first name"
+             autocomplete="given-name">
+
+      <input type="email"
+             name="EMAIL"
+             id="mc-email"
+             placeholder="Your email address"
+             required
+             autocomplete="email">
+
+      <!-- Mailchimp bot protection — do not remove -->
+      <div style="position:absolute; left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_placeholder" tabindex="-1" value="">
+      </div>
+
+      <div id="mc-message" class="mc-message" aria-live="polite"></div>
+
+      <button type="submit" id="mc-submit" class="btn-primary">
+        Subscribe to AISHA →
+      </button>
+
+      <p class="newsletter-disclaimer">No spam. Unsubscribe any time.</p>
+    </form>
+
+    <div class="newsletter-success" id="newsletter-success" aria-live="polite" hidden>
+      <div class="success-icon">✓</div>
+      <h3>You're in!</h3>
+      <p>Welcome to AISHA. Check your inbox for a confirmation.</p>
+    </div>
+  </div>
+</section>

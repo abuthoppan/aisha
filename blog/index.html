@@ -1,0 +1,53 @@
+---
+layout: default
+title: Tutorials
+permalink: /blog/
+body_class: blog-archive
+---
+
+<div class="archive-hero">
+  <p class="section-label">All Tutorials</p>
+  <h1>From the Blog</h1>
+  <p class="page-lead">Practical architecture insights, lean frameworks, and AI integration guides.</p>
+</div>
+
+{% if site.posts.size > 0 %}
+
+  <!-- Category filter -->
+  {% assign all_cats = site.posts | map: "categories" | flatten | uniq | sort %}
+  {% if all_cats.size > 0 %}
+  <div class="category-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% for cat in all_cats %}
+      <button class="filter-btn" data-filter="{{ cat | slugify }}">{{ cat }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="posts-grid posts-grid--full" id="posts-grid">
+    {% for post in site.posts %}
+    <article class="post-card" data-category="{{ post.categories | first | slugify }}">
+      {% if post.categories %}
+        <p class="post-tag">{{ post.categories | first }}</p>
+      {% else %}
+        <p class="post-tag">Article</p>
+      {% endif %}
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      <div class="post-meta">
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% if post.read_time %}<span>{{ post.read_time }} min read</span>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+{% else %}
+  <div class="empty-state">
+    <p class="section-label">Coming soon</p>
+    <h2>First posts dropping shortly.</h2>
+    <p>Subscribe below to be notified when new tutorials go live.</p>
+  </div>
+{% endif %}

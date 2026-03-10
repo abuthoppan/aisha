@@ -1,0 +1,105 @@
+---
+layout: default
+title: The Lean Solution Framework
+permalink: /framework/
+description: "A five-phase process for planning, building, launching and operating digital products — designed for startups and lean teams."
+body_class: framework-page
+---
+
+<div class="page-hero">
+  <p class="section-label">The LSF Framework</p>
+  <h1>Lean Solution<br><span style="color:var(--accent)">Framework</span></h1>
+  <p class="page-lead">Five phases. Minimal documentation. Maximum clarity. Built for teams that need to move fast without breaking things.</p>
+</div>
+
+<div class="framework-overview">
+  <div class="framework-rule-strip">
+    <span>Think Leaner</span>
+    <span class="dot">◆</span>
+    <span>Build Smarter</span>
+    <span class="dot">◆</span>
+    <span>Ship Faster</span>
+  </div>
+</div>
+
+{% assign phases = site.data.phases %}
+{% for phase in phases %}
+<section class="phase-detail reveal" id="phase-{{ phase.name | downcase }}">
+  <div class="phase-detail-header">
+    <div class="phase-detail-num">0{{ forloop.index }}</div>
+    <div>
+      <h2 class="phase-detail-name">{{ phase.name }}</h2>
+      <span class="phase-tag">{{ phase.tag }}</span>
+    </div>
+  </div>
+  <div class="phase-detail-body">
+    <p>{{ phase.description }}</p>
+
+    {% if phase.name == "Discover" %}
+    <h3>Key Documents</h3>
+    <ul>
+      <li><strong>Problem Canvas</strong> — Problem, affected users, current workarounds, cost of inaction (1 page)</li>
+      <li><strong>Stakeholder Map</strong> — Who influences, decides, and is affected</li>
+      <li><strong>Constraint Register</strong> — Budget, time, regulatory, technical constraints</li>
+    </ul>
+    <p><strong>Exit criteria:</strong> Stakeholders agree on the problem and it's worth solving.</p>
+    {% endif %}
+
+    {% if phase.name == "Design" %}
+    <h3>Key Documents</h3>
+    <ul>
+      <li><strong>Solution Brief</strong> — Vision, scope, high-level approach, success metrics (2–3 pages)</li>
+      <li><strong>Architecture Diagram</strong> — Components, integrations, data flow</li>
+      <li><strong>Decision Log (ADR)</strong> — Key decisions and rationale</li>
+      <li><strong>Data Map</strong> — What data, where it lives, who owns it</li>
+      <li><strong>Risk & Assumptions Log</strong> — RAID — what could go wrong</li>
+    </ul>
+    <p><strong>Exit criteria:</strong> Team and client agree on what's being built and why.</p>
+    {% endif %}
+
+    {% if phase.name == "Develop" %}
+    <h3>Key Documents</h3>
+    <ul>
+      <li><strong>Product Backlog</strong> — Prioritised list of features and user stories</li>
+      <li><strong>Sprint Plan</strong> — What gets built this cycle</li>
+      <li><strong>Definition of Done</strong> — Shared agreement on when something is complete</li>
+      <li><strong>Test Scenarios</strong> — Key scenarios to validate against</li>
+    </ul>
+    <p><strong>Exit criteria:</strong> Working software that passes agreed test scenarios.</p>
+    {% endif %}
+
+    {% if phase.name == "Implement" %}
+    <h3>Key Documents</h3>
+    <ul>
+      <li><strong>Go-Live Checklist</strong> — Everything that must be true before launch</li>
+      <li><strong>Cutover Plan</strong> — Steps to move from old to new, with rollback option</li>
+      <li><strong>User Guide / Runbook</strong> — How to use and operate the solution</li>
+      <li><strong>Training Plan</strong> — Who needs to know what before go-live</li>
+    </ul>
+    <p><strong>Exit criteria:</strong> Solution is live, users can operate it, rollback plan exists.</p>
+    {% endif %}
+
+    {% if phase.name == "Operate" %}
+    <h3>Key Documents</h3>
+    <ul>
+      <li><strong>Operating Model</strong> — Roles, responsibilities, escalation paths</li>
+      <li><strong>Support Playbook</strong> — How to handle common issues and incidents</li>
+      <li><strong>Monitoring Dashboard</strong> — Key health metrics visible at a glance</li>
+      <li><strong>Retrospective Log</strong> — What worked, what didn't, what to improve</li>
+    </ul>
+    <p><strong>Exit criteria:</strong> Team can support and evolve the product without the original architect.</p>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+
+<section class="lean-rules reveal">
+  <h2>The Lean Rules</h2>
+  <div class="lean-rules-grid">
+    <div class="lean-rule"><span class="rule-num">1</span><p><strong>One source of truth</strong> — pick one tool and keep everything there</p></div>
+    <div class="lean-rule"><span class="rule-num">2</span><p><strong>Living documents only</strong> — if it won't be updated, don't create it</p></div>
+    <div class="lean-rule"><span class="rule-num">3</span><p><strong>Diagrams over prose</strong> — a good diagram replaces 3 pages of text</p></div>
+    <div class="lean-rule"><span class="rule-num">4</span><p><strong>Decision log is non-negotiable</strong> — future you will thank present you</p></div>
+    <div class="lean-rule"><span class="rule-num">5</span><p><strong>Exit criteria before entry</strong> — don't start a phase without knowing what done looks like</p></div>
+  </div>
+</section>

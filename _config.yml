@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────
+# AISHA — Jekyll Configuration
+# ─────────────────────────────────────────────
+
+title: AISHA
+tagline: "AI for Software Heuristics and Automation"
+description: "Architecture frameworks, lean documentation, and practical tutorials for solution architects and startup builders."
+url: "https://yourusername.github.io"   # ← Change to your GitHub username
+baseurl: "/aisha"                        # ← Change to your repo name, or "" if using a custom domain
+author:
+  name: "Your Name"                     # ← Change this
+  email: "you@example.com"              # ← Change this
+  twitter: "@yourhandle"                # ← Change or remove
+
+# ─── Mailchimp ────────────────────────────────
+mailchimp:
+  action_url: ""  # ← Paste your Mailchimp form action URL here
+                  #    (Mailchimp → Audience → Signup Forms → Embedded Forms → copy action="..." URL)
+
+# ─── Build settings ───────────────────────────
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# ─── Plugins (all supported by GitHub Pages) ──
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ─── Collections ──────────────────────────────
+collections:
+  posts:
+    output: true
+
+# ─── Defaults ─────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# ─── Exclude from build ───────────────────────
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - README.md
+  - CONTRIBUTING.md
